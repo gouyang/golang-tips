@@ -1,44 +1,48 @@
 golang-tips
 ===========
 
-Collect golang tips 
+#Basics
 
-##Basics
+##variable
 
-###variable
+- byte // alias for uint8
+- rune // alias for int32
 
-byte // alias for uint8
-rune // alias for int32
-
-####shorthand
+###shorthand
 
 // constant
+
 const HELLO string = "HELLO, WORLD"
 
 // int
+
 i := 10
 
 // string
+
 s := "hello world"
 
 // array
+
 a := [3]array{1, 2, 3}
 a := [...]array{1, 2, 3}
 
 // slice
+
 s := []slice{1, 2, 3}
 
 // map
+
 m := make(map[string]int)
 
-if
-~~
+###if
 
 if a := b + c; a > 10 {
 	return a
 }
 
-##import
+
+#import
 
 - import format "fmt" 
 
