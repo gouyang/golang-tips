@@ -8,8 +8,6 @@ golang-tips
 - byte // alias for uint8
 - rune // alias for int32
 
-###shorthand
-
 // constant
 
     const HELLO string = "HELLO, WORLD"
@@ -34,6 +32,13 @@ golang-tips
 // map
 
     m := make(map[string]int)
+
+//Buffer
+var b bytes.Buffer // A Buffer needs no initialization.
+buf := new(bytes.Buffer)
+
+//nil
+var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
 
 ###if
 
