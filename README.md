@@ -5,49 +5,21 @@ golang-tips
 
 ##variable
 
-- byte // alias for uint8
-- rune // alias for int32
+- Short variable declarations could be used outside functions.
+- byte is alias for uint8
+- var b bytes.Buffer // Buffer needs no initialization:
+- var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
 
-// constant
+##pointer
 
-    const HELLO string = "HELLO, WORLD"
+- Methods with pointer receivers
 
-// int
-
-    i := 10
-
-// string
-
-    s := "hello world"
-
-// array
-
-    a := [3]array{1, 2, 3}
-    a := [...]array{1, 2, 3}
-
-// slice
-
-    s := []slice{1, 2, 3}
-
-// map
-
-    m := make(map[string]int)
-
-//Buffer
-var b bytes.Buffer // A Buffer needs no initialization.
-buf := new(bytes.Buffer)
-
-//nil
-var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
-
-###if
-
-    if a := b + c; a > 10 {
-	    return a
-    }
+        There are two reasons to use a pointer receiver.
+	First, to avoid copying the value on each method call (more efficient if the value type is a large struct).
+	Second, so that the method can modify the value that its receiver points to.
 
 
-#import
+##import
 
 - import format "fmt" 
 
