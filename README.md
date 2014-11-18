@@ -5,7 +5,7 @@ golang-tips
 
 ##variable
 
-- Short variable declarations could be used outside functions.
+- Short variable declarations could not be used outside functions.
 - byte is alias for uint8
 - var b bytes.Buffer // Buffer needs no initialization:
 - var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
@@ -14,7 +14,8 @@ golang-tips
 
 - Methods with pointer receivers
 
-        There are two reasons to use a pointer receiver.
+	There are two reasons to use a pointer receiver.
+
 	First, to avoid copying the value on each method call (more efficient if the value type is a large struct).
 	Second, so that the method can modify the value that its receiver points to.
 
@@ -37,3 +38,16 @@ golang-tips
 	Suppresses compiler warnings related to fmt if it is not being used,
 	and executes initialization functions if there are any.
 	The remainder of fmt is inaccessible.
+
+##non-local types
+
+"It's impossible to define new methods on non-local type[s]", which is by design.
+The best practice is to embed the non-local type into your own own
+local type, and extend it.
+
+	type MyExtension struct {
+	    otherPackage.Type
+	} 
+
+	func (me *MyExtension) NewMethod() { ...  }
+
