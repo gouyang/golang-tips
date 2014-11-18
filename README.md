@@ -1,11 +1,11 @@
-golang-tips
-===========
+golang-tips and examples
+========================
 
 #Basics
 
 ##variable
 
-- Short variable declarations could not be used outside functions.
+- Short variable declarations could only be used inside a function.
 - byte is alias for uint8
 - var b bytes.Buffer // Buffer needs no initialization:
 - var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
