@@ -9,6 +9,10 @@ golang-tips and examples
 - byte is alias for uint8
 - var b bytes.Buffer // Buffer needs no initialization:
 - var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
+- undefined variable
+
+    if `go run` says undefined varible, try to include the dependency file to the commandline,
+    like `go run main.go entry.go`.
 
 ##pointer
 
