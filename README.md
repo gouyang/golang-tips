@@ -7,6 +7,7 @@ golang-tips and examples
 
 - Short variable declarations could only be used inside a function.
 - byte is alias for uint8
+- rune is alias for int32 // an integer value identifying a Unicode code point
 - var b bytes.Buffer // Buffer needs no initialization:
 - var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
 - undefined variable
@@ -21,6 +22,7 @@ golang-tips and examples
 	There are two reasons to use a pointer receiver.
 
 	First, to avoid copying the value on each method call (more efficient if the value type is a large struct).
+
 	Second, so that the method can modify the value that its receiver points to.
 
 
