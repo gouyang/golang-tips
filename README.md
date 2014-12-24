@@ -57,3 +57,9 @@ local type, and extend it.
 
 	func (me *MyExtension) NewMethod() { ...  }
 
+##tips
+
+- use signed types for everything except bit manipulation
+- [Why is rune in golang an alias for int32 and not uint32?]
+
+[Why is rune in golang an alias for int32 and not uint32?]: http://stackoverflow.com/questions/24714665/why-is-rune-in-golang-an-alias-for-int32-and-not-uint32
