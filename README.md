@@ -1,7 +1,6 @@
 golang-tips and examples
 ========================
 
-#Basics
 
 ##variable
 
@@ -61,5 +60,13 @@ local type, and extend it.
 
 - use signed types for everything except bit manipulation
 - [Why is rune in golang an alias for int32 and not uint32?]
+
+        Go uses a lot of signed values, not just for runes but array indices,
+        Read/Write byte counts, etc. That's because uints, in any language,
+        behave confusingly unless you guard every piece of arithmetic against overflow
+        (for example if var a, b uint = 1, 2, a-b > 0 and a-b > 1000000: play.golang.org/p/lsdiZJiN7V).
+        ints behave more like numbers in everyday life,
+        which is a compelling reason to use them,
+        and there is no equally compelling reason not to use them.
 
 [Why is rune in golang an alias for int32 and not uint32?]: http://stackoverflow.com/questions/24714665/why-is-rune-in-golang-an-alias-for-int32-and-not-uint32
