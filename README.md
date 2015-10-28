@@ -9,10 +9,6 @@ golang-tips and examples
 - rune is alias for int32 // an integer value identifying a Unicode code point
 - var b bytes.Buffer // Buffer needs no initialization:
 - var nil Type // Type must be a pointer, channel, func, interface, map, or slice type
-- undefined variable
-
-    if `go run` says undefined varible, try to include the dependency file to the commandline,
-    like `go run main.go entry.go`.
 
 ##pointer
 
@@ -20,10 +16,8 @@ golang-tips and examples
 
 	There are two reasons to use a pointer receiver.
 
-	First, to avoid copying the value on each method call (more efficient if the value type is a large struct).
-
-	Second, so that the method can modify the value that its receiver points to.
-
+	- avoid copying the value on each method call (more efficient if the value type is a large struct).
+	- the method can modify the value that its receiver points to.
 
 ##import
 
@@ -70,3 +64,11 @@ local type, and extend it.
         and there is no equally compelling reason not to use them.
 
 [Why is rune in golang an alias for int32 and not uint32?]: http://stackoverflow.com/questions/24714665/why-is-rune-in-golang-an-alias-for-int32-and-not-uint32
+
+- [test file existence]
+
+    ```
+    if _, err = os.Stat(file); !os.IsNotExist(err) {}
+    ```
+
+[test file existence]: http://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go
